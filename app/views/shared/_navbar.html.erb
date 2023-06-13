@@ -1,4 +1,11 @@
 <!-- Waiting for new navbar with tailwind -->
-<h1 class="text-3xl font-bold underline">
-    Hello world!
-</h1>
+<nav class="bg-primary border-gray-200">
+    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-6 py-4">
+        <%= link_to root_path, class: "flex items-center" do %>
+          <%= image_tag 'logo-desktop.png', class: 'h-8 mr-3', alt: 'Sonoria Logo' %>
+        <% end %>
+        <div class="flex items-center">
+            <a href="#" class="text-sm p-2 rounded bg-secondary text-white dark:text-white-500 hover:underline">Se connecter</a>
+        </div>
+    </div>
+</nav>
