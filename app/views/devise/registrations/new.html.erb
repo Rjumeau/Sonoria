@@ -1,25 +1,68 @@
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+<section class="bg-white">
+  <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <div class="w-full bg-primary rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
+          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+              <h1 class="text-xl font-bold leading-tight text-center tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                  Bienvenue !
+              </h1>
+              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+                <div class="space-y-4 md:space-y-6">
+                    <div>
+                      <%= f.label :firstname, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" do %>
+                        Prénom
+                      <% end %>
+                      <%= f.input_field :firstname, class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "Prénom", required: true %>
+                    </div>
+                    <div>
+                      <%= f.label :lastname, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" do %>
+                        Nom de famille
+                      <% end %>
+                      <%= f.input_field :lastname, class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "Nom", required: true %>
+                    </div>
+                    <div>
+                      <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+                      <%= f.email_field :email, class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "name@company.com", required: true %>
+                    </div>
+                    <div>
+                      <%= f.label :password, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" do %>
+                        Mot de passe
+                      <% end %>
+                      <%= f.password_field :password, class: "bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "••••••••", required: true %>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-start mt-4">
+                      <div class="flex items-center h-5">
+                        <%= f.check_box :remember_me, class: "w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800", required: true %>
+                      </div>
+                      <div class="ml-3 text-sm">
+                        <%= f.label :remember_me, class: "text-gray-500 dark:text-gray-300" do %>
+                          Se souvenir de moi
+                        <% end %>
+                      </div>
+                    </div>
+                    <% if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                      <%= link_to "Mot de passe oublié ?",
+                          new_password_path(resource_name),
+                          class: "text-sm font-medium text-primary-600 hover:underline dark:text-primary-500" %><br />
+                    <% end %>
+                  </div>
+                  <div>
+                  <% if controller_name == 'registrations' %>
+                    <%= f.button :submit, "S'inscrire", class: "w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" %>
+                  <% end %>
+                  </div>
+                  <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                    <% if devise_mapping.registerable? && controller_name != 'registrations' %>
+                     Vous n'avez pas encore de compte ?
+                     <%= link_to "S'inscrire",
+                         new_registration_path(resource_name),
+                         class: "font-medium text-primary-600 hover:underline dark:text-primary-500" %><br />
+                    <% end %>
+                  </p>
+                </div>
+              <% end %>
+          </div>
+      </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</section>
