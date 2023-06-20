@@ -6,3 +6,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  font-family: $main-font;
+  height: 100vh;
+  background-color: $light-gray;
+}

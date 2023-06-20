@@ -9,8 +9,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        mainBlue: '#223355',
+        mainYellow: '#FFC300',
+      },
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        body: ['DINRoundPro', 'Nunito', 'sans-serif'],
       },
     },
   },
