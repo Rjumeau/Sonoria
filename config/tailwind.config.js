@@ -10,8 +10,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        mainBlue: '#223355',
-        mainYellow: '#FFC300',
+        'main-blue': '#223355',
+        'main-yellow': '#FFC300',
       },
       fontFamily: {
         body: ['DINRoundPro', 'Nunito', 'sans-serif'],
