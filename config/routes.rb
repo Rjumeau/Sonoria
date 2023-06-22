@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :lessons
+
+  get 'users/:id/create_voice', to: 'users#create_voice', as: 'create_user_voice'
 end
