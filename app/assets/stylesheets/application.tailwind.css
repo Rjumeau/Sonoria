@@ -17,6 +17,26 @@
     @apply w-full flex flex-col
   }
 
+  .role-wrapper {
+    @apply flex gap-3 flex-wrap mb-4 pt-4
+  }
+
+  .role-selector {
+    @apply pointer-events-none absolute opacity-0 mt-3
+  }
+
+  .role-selector + label {
+    @apply block cursor-pointer box-border w-full text-left p-5 border border-gray-300 rounded-md
+  }
+
+  .role-selector:hover + label {
+    @apply bg-main-yellow-light ease-in duration-200;
+  }
+
+  .role-selector:checked + label {
+    @apply bg-main-yellow-light;
+  }
+
   .input-wrapper {
     @apply flex flex-col mb-4 gap-3
   }

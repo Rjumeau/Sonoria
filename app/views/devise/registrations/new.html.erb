@@ -4,6 +4,16 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }, html: { class: 'form'}) do |f| %>
       <%= f.error_notification %>
 
+        <%= f.input :role,
+                    required: true,
+                    as: :radio_buttons,
+                    label: 'Vous êtes un(e)...',
+                    collection_wrapper_tag: 'div',
+                    collection_wrapper_class: 'role-wrapper',
+                    item_wrapper_class: 'role-item',
+                    input_html: { class: 'role-selector' },
+                    collection: [['Professeur(e) 👩‍🏫 ', User.roles.keys.first], ['Élève 🧒', User.roles.keys.second]] %>
+
         <%= f.input :firstname,
                     required: true,
                     autofocus: true,
@@ -24,6 +34,7 @@
                     label: 'Votre école',
                     input_html: { class: "input input-bordered input-primary w-full" },
                     wrapper_html: { class: "input-wrapper" } %>
+
 
         <%= f.input :email,
                     required: true,

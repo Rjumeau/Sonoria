@@ -1,0 +1,4 @@
+<%= form_with(model: @user, url: create_user_voice_path, local: true) do |form| %>
+  <%= form.file_field :voice %>
+  <%= form.submit 'Enregistrer la voix' %>
+<% end %>

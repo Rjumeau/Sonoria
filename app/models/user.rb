@@ -6,5 +6,5 @@ class User < ApplicationRecord
   has_many :lessons
   has_one_attached :voice
 
-  enum role: %i[professor student]
+  enum role: { professor: 0, student: 1 }
 end

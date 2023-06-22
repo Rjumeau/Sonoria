@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_22_125558) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_22_161658) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,15 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_22_125558) do
     t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.bigint "liked_id"
-    t.bigint "liker_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["liked_id"], name: "index_likes_on_liked_id"
-    t.index ["liker_id"], name: "index_likes_on_liker_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -69,9 +60,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_22_125558) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role"
+    t.string "school"
     t.string "firstname"
     t.string "lastname"
-    t.string "school"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -79,6 +70,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_22_125558) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "lessons", "users"
-  add_foreign_key "likes", "users", column: "liked_id"
-  add_foreign_key "likes", "users", column: "liker_id"
 end

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
-  def create_voice
+  def new_voice
+    @user = current_user
   end
 end

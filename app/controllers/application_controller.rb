@@ -4,10 +4,6 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name school])
-  end
-
-  def after_sign_up_path_for(resource)
-    create_user_voice_path(resource)
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[firstname lastname school role])
   end
 end
