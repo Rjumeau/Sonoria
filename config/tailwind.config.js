@@ -9,9 +9,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '2rem',
+          sm: '3rem',
+          lg: '4rem',
+          xl: '5rem',
+          '2xl': '6rem',
+        },
+      },
       colors: {
         'main-blue': '#223355',
         'main-yellow': '#FFC300',
+        'main-yellow-light': '#FFD400'
       },
       fontFamily: {
         body: ['DINRoundPro', 'Nunito', 'sans-serif'],

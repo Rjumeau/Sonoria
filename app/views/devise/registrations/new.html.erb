@@ -1,25 +1,58 @@
-<h2>Sign up</h2>
+<div class="container mt-10">
+  <div class="form-wrapper">
+    <h2 class="text-center text-white text-xl mb-10">Bienvenue !</h2>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }, html: { class: 'form'}) do |f| %>
+      <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-  <%= f.error_notification %>
+        <%= f.input :firstname,
+                    required: true,
+                    autofocus: true,
+                    label: 'Prénom',
+                    input_html: { class: "input input-bordered input-primary w-full" },
+                    wrapper_html: { class: "input-wrapper" } %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+        <%= f.input :lastname,
+                    required: true,
+                    autofocus: true,
+                    label: 'Nom de famille',
+                    input_html: { class: "input input-bordered input-primary w-full" },
+                    wrapper_html: { class: "input-wrapper" } %>
+
+        <%= f.input :school,
+                    required: true,
+                    autofocus: true,
+                    label: 'Votre école',
+                    input_html: { class: "input input-bordered input-primary w-full" },
+                    wrapper_html: { class: "input-wrapper" } %>
+
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email",
+                                  class: "input input-bordered input-primary w-full" },
+                    wrapper_html: { class: "input-wrapper" } %>
+
+        <%= f.input :password,
+                    required: true,
+                    label: "Mot de passe",
+                    hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
+                    hint_html: { class: 'text-gray-400'},
+                    input_html: { autocomplete: "new-password",
+                                  class: "input input-bordered input-primary w-full" },
+                    wrapper_html: { class: "input-wrapper" } %>
+
+        <%= f.input :password_confirmation,
+                    required: true,
+                    label: "Confirmez votre mot de passe",
+                    input_html: { autocomplete: "new-password",
+                                  class: "input input-bordered input-primary w-full" },
+                    wrapper_html: { class: "input-wrapper" } %>
+
+      <div class="form-actions">
+        <%= f.button :submit, "S'inscrire", class: 'btn-primary'%>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

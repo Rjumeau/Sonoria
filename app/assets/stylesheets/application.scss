@@ -9,6 +9,7 @@
 
 body {
   font-family: $main-font;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: none;
   background-color: $light-gray;
 }

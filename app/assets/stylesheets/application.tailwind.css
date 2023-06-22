@@ -6,6 +6,22 @@
 
 @layer components {
   .btn-primary {
-    @apply py-2 px-3 rounded bg-main-yellow;
+    @apply py-2 px-3 rounded bg-main-yellow hover:bg-main-yellow-light ease-in duration-200;
+  }
+
+  .form-wrapper {
+    @apply bg-main-blue p-20 text-white rounded
+  }
+
+  .form {
+    @apply w-full flex flex-col
+  }
+
+  .input-wrapper {
+    @apply flex flex-col mb-4 gap-3
+  }
+
+  .form-actions {
+    @apply flex justify-center
   }
 }
