@@ -6,3 +6,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  font-family: $main-font;
+  min-height: 100vh;
+  max-height: none;
+  background-color: $light-gray;
+}

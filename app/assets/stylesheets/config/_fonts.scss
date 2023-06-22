@@ -1,9 +1,8 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$main-font: "DINRoundPro", "Nunito", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,3 +13,63 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@font-face {
+  font-family: 'DINRoundPro';
+  src: url('DINRoundPro-Black.eot');
+  src: local('DINRoundPro-Black'),
+    url('DINRoundPro-Black.eot?#iefix') format('embedded-opentype'),
+    url('DINRoundPro-Black.woff2') format('woff2'),
+    url('DINRoundPro-Black.woff') format('woff'),
+    url('DINRoundPro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DINRoundPro-Medi';
+  src: url('DINRoundPro-Medi.eot');
+  src: local('DINRoundPro-Medi'),
+    url('DINRoundPro-Medi.eot?#iefix') format('embedded-opentype'),
+    url('DINRoundPro-Medi.woff2') format('woff2'),
+    url('DINRoundPro-Medi.woff') format('woff'),
+    url('DINRoundPro-Medi.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DINRoundPro';
+  src: url('DINRoundPro-Light.eot');
+  src: local('DINRoundPro-Light'),
+    url('DINRoundPro-Light.eot?#iefix') format('embedded-opentype'),
+    url('DINRoundPro-Light.woff2') format('woff2'),
+    url('DINRoundPro-Light.woff') format('woff'),
+    url('DINRoundPro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DINRoundPro';
+  src: url('DINRoundPro.eot');
+  src: local('DINRoundPro'),
+    url('DINRoundPro.eot?#iefix') format('embedded-opentype'),
+    url('DINRoundPro.woff2') format('woff2'),
+    url('DINRoundPro.woff') format('woff'),
+    url('DINRoundPro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DINRoundPro';
+  src: url('DINRoundPro-Bold.eot');
+  src: local('DINRoundPro-Bold'),
+    url('DINRoundPro-Bold.eot?#iefix') format('embedded-opentype'),
+    url('DINRoundPro-Bold.woff2') format('woff2'),
+    url('DINRoundPro-Bold.woff') format('woff'),
+    url('DINRoundPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}

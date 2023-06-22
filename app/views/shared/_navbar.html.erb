@@ -1,4 +1,30 @@
-<!-- Waiting for new navbar with tailwind -->
-<h1 class="text-3xl font-bold underline">
-    Hello world!
-</h1>
+<div class="navbar bg-main-blue">
+  <div class="flex-1 pl-3">
+    <%= link_to root_path do %>
+      <%= image_tag 'logo-desktop.png' %>
+    <% end %>
+  </div>
+  <% if user_signed_in? %>
+    <div class="flex-none">
+      <div class="dropdown dropdown-end">
+        <label tabindex="0">
+          <div class="w-10 rounded-full cursor-pointer">
+            <%= image_tag "default-avatar.png"%>
+          </div>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+          <li>
+            <a class="justify-between">
+              Profile
+              <span class="badge">New</span>
+            </a>
+          </li>
+          <li><a>Settings</a></li>
+          <li><%= button_to "Se déconnecter", destroy_user_session_path, method: 'delete' %></li>
+        </ul>
+      </div>
+    </div>
+  <% else %>
+    <%= link_to "Se connecter", new_user_session_path, class: 'btn-primary' %>
+  <% end %>
+</div>
