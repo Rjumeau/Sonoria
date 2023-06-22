@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer components {
   .btn-primary {
     @apply py-2 px-3 rounded bg-main-yellow hover:bg-main-yellow-light ease-in duration-200;
