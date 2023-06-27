@@ -1,0 +1,20 @@
+.filled {
+  background-position: top;
+  background-image: linear-gradient(to top, red 0%, transparent 100%);
+}
+
+.initial {
+  background-image: none;
+}
+
+.transition-all {
+  transition-property: opacity, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  margin-bottom: 40px;
+}
+
+.transition-all.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+}
