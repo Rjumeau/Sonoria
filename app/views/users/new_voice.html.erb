@@ -8,11 +8,14 @@
         <p>Répétez la phrase :</p>
         <p>Sonoria, on apprend en écoutant</p>
       </div>
-      <div class="w-20 h-20 rounded-full border border-width-8 border-white flex flex-col items-center justify-center initial"
-           data-voice-record-target="fillEffect">
-        <i class="fa-solid fa-microphone fa-2xl block cursor-pointer" data-voice-record-target="microphone"
+      <div class="w-20 h-20 rounded-full border border-width-8 border-white flex flex-col items-center justify-center">
+        <i class="fa-solid fa-microphone fa-2xl cursor-pointer" data-voice-record-target="microphone"
            data-action="click->voice-record#newRecord"></i>
+        <i class="fa-solid fa-stop fa-2xl cursor-pointer invisible" data-voice-record-target="stop"
+           data-action="click->voice-record#stopRecord"></i>
       </div>
+      <canvas id="waveCanvas" class="hidden" data-voice-record-target="audioRecord">
+      </canvas>
     </div>
   </div>
 </div>
