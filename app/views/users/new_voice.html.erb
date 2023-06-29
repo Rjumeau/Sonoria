@@ -17,15 +17,19 @@
            data-action="click->voice-record#startAudioRecording">
         </i>
         <div class="recording-control-buttons-container hide" data-voice-record-target="recordingControlButtonsContainer">
-          <i class="cancel-recording-button fa fa-times-circle-o" aria-hidden="true"></i>
+          <i class="cancel-recording-button fas fa-times-circle-o" aria-hidden="true"
+             data-action="click->voice-record#cancelAudioRecording">
+          </i>
           <div class="recording-elapsed-time" data-voice-record-target="elapsedTimeTag">
-            <i class="red-recording-dot fa fa-circle" aria-hidden="true"></i>
+            <i class="red-recording-dot fas fa-circle" aria-hidden="true"></i>
             <p class="elapsed-time"></p>
           </div>
-          <i class="stop-recording-button fa fa-stop-circle-o" aria-hidden="true" data-voice-record-target="stopButton"></i>
+          <i class="stop-recording-button fa fa-stop-circle-o" aria-hidden="true" data-voice-record-target="stopButton"
+            data-action="click->voice-record#stopAudioRecording">
+          </i>
         </div>
         <div class="text-indication-of-audio-playing-container">
-          <p class="text-indication-of-audio-playing hide">Audio is playing<span>.</span><span>.</span><span>.</span></p>
+          <p class="text-indication-of-audio-playing hide" data-voice-record-target="textIndicatorOfAudiPlaying">Audio is playing<span>.</span><span>.</span><span>.</span></p>
         </div>
       </div>
       <div class="overlay hide" data-voice-record-target="overlay">
