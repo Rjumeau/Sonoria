@@ -111,6 +111,8 @@ export default class extends Controller {
   maximumRecordingTimeInHours = 1
   elapsedTimeTimer = null
 
+  audioElementSource = this.audioElementTarget.getElementsByTagName('source')[0]
+
   startAudioRecording() {
 
     console.log("Recording Audio...");
