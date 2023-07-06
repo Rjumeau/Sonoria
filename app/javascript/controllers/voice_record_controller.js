@@ -111,7 +111,7 @@ export default class extends Controller {
   maximumRecordingTimeInHours = 1
   elapsedTimeTimer = null
 
-  audioElementSource = this.audioElementTarget.getElementsByTagName('source')[0]
+  audioElementSource = this.audioElementTarget.getElementsByTagName('source')
 
   startAudioRecording() {
 
@@ -220,10 +220,10 @@ export default class extends Controller {
       reader.onload = (e) => {
           //store the base64 URL that represents the URL of the recording audio
           let base64URL = e.target.result;
-
+          debugger
           //If this is the first audio playing, create a source element
           //as pre populating the HTML with a source of empty src causes error
-          if (!audioElementSource) //if its not defined create it (happens first time only)
+          if (typeof audioElementSource == 'undefined') //if its not defined create it (happens first time only)
               this.createSourceForAudioElement();
 
           //set the audio element's source using the base64 URL
@@ -300,7 +300,6 @@ export default class extends Controller {
   createSourceForAudioElement() {
     let sourceElement = document.createElement("source");
     this.audioElementTarget.appendChild(sourceElement);
-
     audioElementSource = sourceElement;
   }
 
