@@ -22,7 +22,7 @@ module.exports = {
       colors: {
         'main-blue': '#223355',
         'main-yellow': '#FFC300',
-        'main-yellow-light': '#FFD400'
+        'main-light-yellow': '#FFD400'
       },
       fontFamily: {
         body: ['DINRoundPro', 'Nunito', 'sans-serif'],
