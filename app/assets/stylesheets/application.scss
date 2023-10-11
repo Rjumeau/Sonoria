@@ -11,6 +11,11 @@
 body {
   font-family: $main-font;
   min-height: 100vh;
-  max-height: none;
+  display: flex;
+  flex-direction: column;
   background-color: $light-gray;
+}
+
+footer {
+  margin-top: 20px;
 }
